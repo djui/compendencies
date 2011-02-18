@@ -4,6 +4,9 @@ The compilation dependencies module/app lists file needed during
 compile time by the Erlang compiler. These files are usually included
 using the `-include()` and `-include_lib()` preprocessor flags.
 
+The module you want to analyze needs to be compiled with the
+`debug_info` flag.
+
 Note: Currently not all returned paths are absolute paths.
 
 # Usage
@@ -16,7 +19,7 @@ examples shows the dependencies for the Erlang `code` module:
     :
     1> compendencies:go(code).
     ["./code.erl",
-     "/Users/uwe/dev/OTP/src/otp_r14b01_klarna/bootstrap/lib/kernel/include/file.hrl"]
+     "/Users/dev/OTP/src/otp_r14b01/bootstrap/lib/kernel/include/file.hrl"]
 
 You can also directly use the beam file as parameter:
 
